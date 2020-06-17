@@ -72,3 +72,19 @@ var sumBelow = function(n) {
     return n + sumBelow(n - 1) - 1
 };
 sumBelow(10)  //45
+
+
+
+
+
+// 6. Get the integers within a range (x, y).
+// range(2,9); // [3,4,5,6,7,8]
+var range = function(x, y) {
+    if(x >= y)return [];
+    if(y - x === 1)return [];
+
+    let results = [];
+    results.push(x + 1);
+    return results.concat(range(x + 1, y));
+};
+range(2,9) // [3, 4, 5, 6, 7, 8]
