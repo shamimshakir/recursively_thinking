@@ -19,3 +19,28 @@ var sum = function(array) {
     return array[0] + sum(array.slice(1))
 };
 sum([1,2,3,4,5,6]); //21
+
+
+
+
+
+// 3. Sum all numbers in an array containing nested arrays.
+// arraySum([1,[2,3],[[4]],5]); // 15
+let arraySum = function(array) {
+    /***** Using Array Reduce **********/
+    // return array.reduce((acc, value) => {
+    //     return acc += Array.isArray(value)?arraySum(value):value;
+    // },0)
+
+    /****** Regular Way | Iterative and recursive ********/
+    let sum = 0;
+    array.forEach(elem => {
+        if(Array.isArray(elem)){
+            sum += arraySum(elem)
+        }else{
+            sum += elem
+        }
+    })
+    return sum
+};
+arraySum([1,[2,3],[[4]],5])    // 15
