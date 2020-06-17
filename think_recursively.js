@@ -44,3 +44,19 @@ let arraySum = function(array) {
     return sum
 };
 arraySum([1,[2,3],[[4]],5])    // 15
+
+
+
+
+
+// 4. Check if a number is even.
+var isEven = function(n) {
+    if(n === 0){
+        return true;
+    }else if(n === 1){
+        return false;
+    }else{
+        return isEven(n - 2)
+    }
+};
+isEven(8) // true
