@@ -88,3 +88,19 @@ var range = function(x, y) {
     return results.concat(range(x + 1, y));
 };
 range(2,9) // [3, 4, 5, 6, 7, 8]
+
+
+
+
+
+// 7. Compute the exponent of a number.
+// The exponent of a number says how many times the base number is used as a factor.
+// 8^2 = 8 x 8 = 64. Here, 8 is the base and 2 is the exponent.
+// exponent(4,3); // 64
+var exponent = function(base, exp) {
+    if(exp === 0)return 1;
+    if(exp === 1)return base;
+     
+    return base * exponent(base, exp - 1)
+};
+let res = exponent(3,3)
