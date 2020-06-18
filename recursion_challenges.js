@@ -103,4 +103,4 @@ var exponent = function(base, exp) {
      
     return base * exponent(base, exp - 1)
 };
-let res = exponent(3,3)
+exponent(3,3) // 27
