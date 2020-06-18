@@ -171,3 +171,19 @@ var modulo = function(x, y) {
     return modulo(x - y, y)
 };
 modulo(22, 6);   //4
+
+
+
+
+
+
+// 12. Write a function that multiplies two numbers without using the * operator or
+// Math methods.
+var multiply = function(x, y) {
+    if(y === 0)return 0;
+    if(x === 0)return 0;
+
+
+    return x + multiply(x, y - 1)
+};
+multiply(5,8) // 40
