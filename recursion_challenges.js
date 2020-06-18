@@ -1,3 +1,7 @@
+/*=== These Challenges from this gist
+https://github.com/JS-Challenges/recursion-prompts/blob/master/src/recursion.js#L58
+
+**=======*/
 
 // 1. Calculate the factorial of a number. The factorial of a non-negative integer n,
 // denoted by n!, is the product of all positive integers less than or equal to n.
@@ -104,3 +108,35 @@ var exponent = function(base, exp) {
     return base * exponent(base, exp - 1)
 };
 exponent(3,3) // 27
+
+
+
+
+
+
+// 8. Determine if a number is a powjker of two.
+// powerOfTwo(1); // true
+// powerOfTwo(16); // true
+// powerOfTwo(10); // false
+var powerOfTwo = function(n) {
+    if(n === 1)return true;
+    if(n / 2 === 1)return true;
+    if(n % 2 !== 0)return false;
+    
+    n = n / 2
+    return powerOfTwo(n)
+};
+powerOfTwo(16) // true
+
+
+
+
+
+
+// 9. Write a function that reverses a string.
+var reverse = function(string) {
+    if(string === '')return '';
+
+    return reverse(string.slice(1)) + string[0]
+};
+reverse('string') //gnirts
