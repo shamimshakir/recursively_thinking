@@ -140,3 +140,17 @@ var reverse = function(string) {
     return reverse(string.slice(1)) + string[0]
 };
 reverse('string') //gnirts
+
+
+
+
+
+
+// 10. Write a function that determines if a string is a palindrome.
+var palindrome = function(string) {
+    if(string.length <= 1)return true;
+    if(string[0] !== string[string.length - 1])return false;
+
+    return palindrome(string.slice(1, -1))
+};
+palindrome('rotor') //true
