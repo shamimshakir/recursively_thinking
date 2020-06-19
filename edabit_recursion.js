@@ -56,3 +56,43 @@ function getLength(arr) {
     return flatArr.length
 }
 getLength([1, [2, [3, [4, [5, 6]]]]])    // ➞ 6
+
+
+
+
+
+
+
+
+
+
+
+function rootDigit(n) {
+    let sum = eval(String(n).split('').join('+'))
+    if(String(n).split('').length > 1){
+        return rootDigit(sum)
+    }else{
+        return sum;
+    }
+}
+rootDigit(999888777) //9
+
+
+
+
+
+
+function deepCount(arr) {
+	let count = 0
+    function flatAndCount(arr){
+        for(let el of arr){
+            count++;
+            if(Array.isArray(el)){
+                flatAndCount(el)
+            }
+        }
+    }
+    flatAndCount(arr)
+    return count
+}
+deepCount(["x", "y", ["z"]]) // 4
