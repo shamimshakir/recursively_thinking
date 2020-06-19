@@ -19,3 +19,18 @@ function fibonacci(num) {
 	return fibonacci(num -1) + fibonacci(num - 2)
 }
 fibonacci(7)   //21
+
+
+
+
+
+//Recursion: GCD
+function GCD(a, b){
+    /**** Very good Explaination ***/
+    //https://www.youtube.com/watch?v=H8jbNa6lcB4&feature=youtu.be
+
+    if(a % b === 0)return b;
+
+    return GCD(b, a % b)
+}
+GCD(14,48)
