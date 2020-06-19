@@ -34,3 +34,25 @@ function GCD(a, b){
     return GCD(b, a % b)
 }
 GCD(14,48)
+
+
+
+
+
+
+//Length of a Nested Array
+function getLength(arr) {
+	flatArr = []
+	function flattenArr(arr){
+	for(let elem of arr){
+	    if(Array.isArray(elem)){
+		flattenArr(elem)
+	    }else{
+		flatArr.push(elem)
+	    }
+	}
+    }  
+    flattenArr(arr)
+    return flatArr.length
+}
+getLength([1, [2, [3, [4, [5, 6]]]]])    // ➞ 6
