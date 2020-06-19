@@ -192,3 +192,15 @@ multiply(5,8) // 40
 
 
 
+// 15. Write a function that compares each character of two strings and returns true if
+// both are identical.
+// compareStr('house', 'houses') // false
+// compareStr('tomato', 'tomato') // true
+var compareStr = function(str1, str2) {
+    if(str1.length !== str2.length)return false;
+    if(str1[0] !== str2[0])return false;
+    if(str1.length <= 0 && str2.length <= 0)return true;
+
+    return compareStr(str1.substr(1), str2.substr(1))
+};
+compareStr('house', 'house')   //true
