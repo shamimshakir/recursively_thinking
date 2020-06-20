@@ -204,3 +204,19 @@ var compareStr = function(str1, str2) {
     return compareStr(str1.substr(1), str2.substr(1))
 };
 compareStr('house', 'house')   //true
+
+
+
+
+
+
+// 16. Write a function that accepts a string and creates an array where each letter
+// occupies an index of the array.
+var createArray = function(str) {
+    if(str.length <= 0)return [];
+
+    return [str[0]].concat(createArray(str.substr(1)))
+};
+createArray('string')   //["s", "t", "r", "i", "n", "g"]
+
+
